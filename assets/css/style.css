@@ -27,7 +27,7 @@
     height: 65%;
     padding: 0px;
     margin: 0px;
-    opacity: 0.9; 
+    opacity: 0.7; 
   }
   
   /*----------------------------Welcome Page Only----------------------*/
@@ -63,10 +63,15 @@
   }
   
   body {
-    padding: 0px;
+    /* padding: 0px;
     margin: 0px;
     font-family: 'Terrain';
-    background-image: url("../images/background.jpg");
+    background-image: url("../images/background.jpg");  */
+   background: url("../images/background.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   }
   
   .jumbotron h1 {
