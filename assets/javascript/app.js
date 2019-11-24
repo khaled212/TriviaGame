@@ -86,7 +86,7 @@ $(document).ready(function () {
                 correctAnswer();
             } else {
                 answered = true; 
-                $('.question').text("YOU CHOSE: " + triviaGame[indexQandA].answer[id] + ".....HOWEVER THE ANSWER IS: " + triviaGame[indexQandA].answer[correct]);
+                $('.question').text("YOU CHOSE: " + triviaGame[indexQandA].answer[id] + "...HOWEVER THE ANSWER IS: " + triviaGame[indexQandA].answer[correct]);
                 incorrectAnswer();
             }
         });
