@@ -4,10 +4,10 @@ $(document).ready(function () {
     var correctAnswers = 0;
     var incorrectAnswers = 0;
     var unansweredQuestions = 0;
-    var timeRemaining = 16;
+    var timeRemaining = 20;
     var intervalID;
-    var indexQandA = 0; //index to load a different question each round without the game reset or screen refresh
-    var answered = false; //variable to stop the timer if user has clicked an answer
+    var indexQandA = 0; 
+    var answered = false; 
     var correct;
     var triviaGame = [{
         question: "Making Bacon, and I put it in a Pancake. What's it gonna make ?",
@@ -48,7 +48,7 @@ $(document).ready(function () {
         question: "What is your quest?",
         answer: ["You seek the Holy Grail", "Blue, No...", "The airspeed of an unladen swallow", "I don't know that!"],
         correct: "2",
-        image: ("assets//images/quest.jpeg")
+        image: ("assets//images/quest.jpg")
     }];
 
     // ------------- FUNCTION DECLARATIONS ----------------------------
@@ -64,8 +64,8 @@ $(document).ready(function () {
     }
 
     function loadQandA() {
-        answered = false; // will allow timeRemaining to be pushed back to <h5> after round reset....else statement in function timer()
-        timeRemaining = 16;
+        answered = false;
+        timeRemaining = 20;
         intervalID = setInterval(timer, 1000);
         if (answered === false) {
             timer();
@@ -81,11 +81,11 @@ $(document).ready(function () {
         $("h4").click(function () {
             var id = $(this).attr('id');
             if (id === correct) {
-                answered = true; // stops the timer
+                answered = true; 
                 $('.question').text("THE ANSWER IS: " + triviaGame[indexQandA].answer[correct]);
                 correctAnswer();
             } else {
-                answered = true; //stops the timer
+                answered = true; 
                 $('.question').text("YOU CHOSE: " + triviaGame[indexQandA].answer[id] + ".....HOWEVER THE ANSWER IS: " + triviaGame[indexQandA].answer[correct]);
                 incorrectAnswer();
             }
@@ -134,12 +134,12 @@ $(document).ready(function () {
     function resetRound() {
         $('.answersAll').remove();
         $('.answers').append('<img class=answerImage width="150" height="150" src="' + triviaGame[indexQandA].image + ' ">'); // adds answer image
-        indexQandA++; // increments index which will load next question when loadQandA() is called again
+        indexQandA++; 
         if (indexQandA < triviaGame.length) {
             setTimeout(function () {
                 loadQandA();
                 $('.answerImage').remove();
-            }, 5000); // removes answer image from previous round
+            }, 5000); 
         } else {
             setTimeout(function () {
                 $('.question').remove();
